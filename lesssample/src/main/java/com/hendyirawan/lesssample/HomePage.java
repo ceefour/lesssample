@@ -18,6 +18,7 @@ public class HomePage extends WebPage {
 		response.render(CssHeaderItem.forReference(new LessResourceReference(HomePage.class, "root-notworking.less")));
 		response.render(CssHeaderItem.forReference(new LessResourceReference(HomePage.class, "root-classpathrel.less")));
 		response.render(CssHeaderItem.forReference(new LessResourceReference(HomePage.class, "root-classpathabs.less")));
+		response.render(CssHeaderItem.forReference(new LessResourceReference(HomePage.class, "root-package.less")));
 	}
 
 	public HomePage(final PageParameters parameters) {
