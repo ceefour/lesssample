@@ -1,0 +1,21 @@
+LESS Sample
+===========
+
+Wicket Bootstrap test case https://github.com/l0rdn1kk0n/wicket-bootstrap/issues/390
+
+1. Import both Maven projects (lesssample and lesslib) as Maven project to Eclipse
+2. Run in Tomcat
+3. View source, e.g. view-source:http://localhost:8980/lesssample/ now you should see several stylesheet refs:
+
+	<link rel="stylesheet" type="text/css" href="./wicket/resource/com.hendyirawan.lesssample.HomePage/root-working-ver-1404022224000.less" />
+	<link rel="stylesheet" type="text/css" href="./wicket/resource/com.hendyirawan.lesssample.HomePage/root-notworking-ver-1404021809000.less" />
+	<link rel="stylesheet" type="text/css" href="./wicket/resource/com.hendyirawan.lesssample.HomePage/root-classpathrel-ver-1404022084000.less" />
+	<link rel="stylesheet" type="text/css" href="./wicket/resource/com.hendyirawan.lesssample.HomePage/root-classpathabs-ver-1404022093000.less" />
+
+Of all those:
+
+1. root-working is working
+2. root-notworking throws ERROR file:/home/ceefour/git/lesssample/lesssample/target/classes/com/hendyirawan/lesssample/root-notworking.less 7:1 The file child-other.less does not exist.
+3. root-classpathrel throws Cannot resolve relative source with name 'classpath!child-other.less' in the classpath
+4. root-classpathabs is working
+  
